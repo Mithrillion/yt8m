@@ -24,9 +24,11 @@ g.add_edge_list(np.transpose(dense.nonzero()))
 label = g.new_vertex_property("string")
 label.set_2d_array(np.array(labels[:n]))
 state = minimize_nested_blockmodel_dl(g, deg_corr=True)
-state.draw(output="hsbm-fit.svg", 
+state.print_summary()
+print([x.tolist() for x in state.get_bs()])
+state.draw(output="hsbm-fit-latest.svg", 
            vertex_text=label, 
-           output_size=(1500, 1500), 
+           output_size=(1000, 1000), 
            deg_size=False,
            vertex_text_position="centered",
            fit_view=0.8)

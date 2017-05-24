@@ -9,6 +9,10 @@ features/
 *.nb.html
 *.pkl
 *.feather
+*.mtx
+*.npy
+*.json
+*.png
 
 
 # Byte-compiled / optimized / DLL files
